@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import './components/title.dart';
 import './components/button_list.dart';
-import 'components/login_area_component.dart';
+import 'components/signup_area_component.dart';
 import './components/component.dart';
 
 void main() {
@@ -63,17 +63,16 @@ class MyApp extends StatelessWidget {
   }
   Widget section() {
     return Container(
-      margin: EdgeInsets.only(top:30),
+      margin: const EdgeInsets.only(top:30),
       child: StreamBuilder(stream: _controller.stream,initialData: 0,builder :builderFunc),
     );
   }
   Widget builderFunc(BuildContext context,AsyncSnapshot<int> snapshot) {
     Component e;
-    print("${snapshot.data}");
     switch(snapshot.data)
     {
       case 1:
-        e = LoginAreaComponent();
+        e = SignupAreaComponent();
         break;
       default:
         e = entry();

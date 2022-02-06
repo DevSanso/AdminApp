@@ -4,7 +4,7 @@ import 'dart:async';
 import './component.dart';
 import './muti_text_area.dart';
 
-class LoginAreaComponent extends StatelessWidget implements Component{
+class SignupAreaComponent extends StatelessWidget implements Component{
   final StreamController<int> _controller = StreamController();
   @override
   Stream<int> stream()  => _controller.stream;
