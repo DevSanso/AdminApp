@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-
+import './component.dart';
 
 
 class RaisedButtonCotent {
@@ -10,10 +10,11 @@ class RaisedButtonCotent {
   const RaisedButtonCotent(this.id,this.text);  
 }
 
-class ButtonListComponent extends StatelessWidget {
+class ButtonListComponent extends StatelessWidget implements Component{
   final List<RaisedButtonCotent> btnContents;
   final StreamController<int> _controller = StreamController();
-  late Stream<int> stream  = _controller.stream;
+  @override
+  Stream<int> stream()  => _controller.stream;
 
   ButtonListComponent(this.btnContents,{Key? key}) : super(key: key);
   

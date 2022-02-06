@@ -67,7 +67,7 @@ class MyApp extends StatelessWidget {
     
 
     var e = entry();
-    event = e.stream;
+    event = e.stream();
     return e;
   }
 
