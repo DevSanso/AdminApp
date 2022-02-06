@@ -58,17 +58,3 @@ class ButtonListComponent extends StatelessWidget implements Component{
 
 }
 
-/*
-MaterialButton(child:Text(e.text,
-        style: const TextStyle(
-          fontSize: 24,
-          color: Color.fromARGB(255, 250, 132, 132)
-        ),
-      ),
-      onPressed: ()=> {
-        _controller.add(e.id)
-      },
-      minWidth: 100,
-      color: Colors.white,
-    ));
-*/
