@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import './components/title.dart';
 import './components/button_list.dart';
-
+import './components/component.dart';
 
 void main() {
   runApp(const MyApp());
@@ -71,7 +71,7 @@ class MyApp extends StatelessWidget {
     return e;
   }
 
-  ButtonListComponent entry() {
+  Component entry() {
     return ButtonListComponent(const [
       RaisedButtonCotent(1, "signup"),
       RaisedButtonCotent(2, "signin")
