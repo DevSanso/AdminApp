@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import './components/title.dart';
 import './components/button_list.dart';
-import 'components/signup_area_component.dart';
+import './components/signup_area_component.dart';
 import './components/component.dart';
-
+import './components/signin_area_component.dart';
 void main() {
   runApp(const MyApp());
 }
@@ -73,6 +73,9 @@ class MyApp extends StatelessWidget {
     {
       case 1:
         e = SignupAreaComponent();
+        break;
+      case 2:
+        e = SigninAreaComponent();
         break;
       default:
         e = entry();
