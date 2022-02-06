@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import './components/title.dart';
 import './components/button_list.dart';
-import 'components/LoginAreaComponent.dart';
+import 'components/login_area_component.dart';
 import './components/component.dart';
 
 void main() {
@@ -86,8 +86,8 @@ class MyApp extends StatelessWidget {
 
   Component entry() {
     return ButtonListComponent(const [
-      RaisedButtonCotent(1, "signup"),
-      RaisedButtonCotent(2, "signin")
+      RaisedButtonCotent(1, "sign up"),
+      RaisedButtonCotent(2, "sign in")
     ]);
   }
 }

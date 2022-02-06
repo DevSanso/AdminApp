@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import './component.dart';
+import './muti_text_area.dart';
 
 class LoginAreaComponent extends StatelessWidget implements Component{
   final StreamController<int> _controller = StreamController();
@@ -18,20 +19,14 @@ class LoginAreaComponent extends StatelessWidget implements Component{
   }
   List<Widget> _section() {
     var section = <Widget>[
-      const Material(
-        type: MaterialType.transparency,
-        child: Text(
+      Container(
+        margin: const EdgeInsets.only(top:30),
+        child : const MutiTextAreaComponent(
           "Create Account",
-          style: TextStyle(color: Colors.white,fontSize: 28),
+          ["Email","Password","PreEnter Password"])
         )
-      )
     ];
-    section.addAll(
-      _textAreas().map((e) => Container(
-        margin: const EdgeInsets.all(10),
-        child : Material(child: e,type: MaterialType.transparency,)
-      ))
-    );
+   
     section.add(
       Container(
         margin: const EdgeInsets.only(top: 50,bottom: 60),
@@ -40,34 +35,7 @@ class LoginAreaComponent extends StatelessWidget implements Component{
     );
     return section;
   }
-  List<Widget> _textAreas() {
-    return [
-      const TextField(
-        obscureText: true,
-        decoration: InputDecoration(
-          labelStyle: TextStyle(color: Colors.white),
-          border: UnderlineInputBorder(),
-          labelText: 'Email',
-        ),
-      ),
-      const TextField(
-        obscureText: true,
-        decoration: InputDecoration(
-          labelStyle: TextStyle(color: Colors.white),
-          border: UnderlineInputBorder(),
-          labelText: 'Password',
-        ),
-      ),
-      const TextField(
-        obscureText: true,
-        decoration: InputDecoration(
-          labelStyle: TextStyle(color: Colors.white),
-          border: UnderlineInputBorder(),
-          labelText: 'PreEnter Password',
-        ),
-      )
-    ];
-  }
+
 
   Widget _buttons() {
     return Row(
