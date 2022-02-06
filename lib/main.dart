@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
 import './components/title.dart';
 import './components/button_list.dart';
+import './components/muti_text_area.dart';
 import './components/component.dart';
 
 void main() {
@@ -9,9 +11,12 @@ void main() {
 
 
 class MyApp extends StatelessWidget {
+  static StreamController<int> _controller = StreamController();
+
   const MyApp({Key? key}) : super(key: key);
-  static Stream<int> event = Stream.value(0);
+  
   // This widget is the root of your application.
+  
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -59,15 +64,23 @@ class MyApp extends StatelessWidget {
   Widget section() {
     return Container(
       margin: EdgeInsets.only(top:30),
-      child: StreamBuilder(stream: event,builder :builderFunc),
+      child: StreamBuilder(stream: _controller.stream,initialData: 0,builder :builderFunc),
     );
   }
   Widget builderFunc(BuildContext context,AsyncSnapshot<int> snapshot) {
-
-    
-
-    var e = entry();
-    event = e.stream();
+    Component e;
+    print("${snapshot.data}");
+    switch(snapshot.data)
+    {
+      case 1:
+        e = MutiTextAreaComponent();
+        break;
+      default:
+        e = entry();
+    }
+    () async {
+      _controller.add(await e.stream().first);
+    }();
     return e;
   }
 
