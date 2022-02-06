@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 import './components/title.dart';
 import './components/button_list.dart';
-import './components/muti_text_area.dart';
+import 'components/LoginAreaComponent.dart';
 import './components/component.dart';
 
 void main() {
@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
     switch(snapshot.data)
     {
       case 1:
-        e = MutiTextAreaComponent();
+        e = LoginAreaComponent();
         break;
       default:
         e = entry();
