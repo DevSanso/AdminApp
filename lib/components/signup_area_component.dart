@@ -46,7 +46,7 @@ class SignupAreaComponent extends StatelessWidget implements Component{
         Container(
           margin: const EdgeInsets.only(left: 20),
           width: 180,
-          child : _loginBtnChild()
+          child : _createBtnChild()
         )
       ],
     );
@@ -65,9 +65,9 @@ Text _cancelBtnChild() {
   );
 }
 
-Widget _loginBtnChild() {
+Widget _createBtnChild() {
   return ElevatedButton(
-    child:const Text("Login",
+    child:const Text("Create",
       style: TextStyle(
       fontSize: 24,
       color: Color.fromARGB(255, 250, 132, 132)
